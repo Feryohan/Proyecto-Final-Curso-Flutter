@@ -22,7 +22,7 @@ class _PrincipalState extends State<Principal> {
       child: FlatButton(
         child: Text(
           'Clases',
-          style: TextStyle(color: Colors.white),
+          style: TextStyle(fontSize: 20, color: Colors.white),
         ),
         onPressed: () {
           Navigator.push(
@@ -49,7 +49,7 @@ class _PrincipalState extends State<Principal> {
       child: FlatButton(
         child: Text(
           'Recorridos',
-          style: TextStyle(color: Colors.white),
+          style: TextStyle(fontSize: 20, color: Colors.white),
         ),
         onPressed: () {
           Navigator.push(
@@ -76,7 +76,7 @@ class _PrincipalState extends State<Principal> {
       child: FlatButton(
         child: Text(
           'Productos',
-          style: TextStyle(color: Colors.white),
+          style: TextStyle(fontSize: 20, color: Colors.white),
         ),
         onPressed: () {
           Navigator.push(
@@ -96,13 +96,25 @@ class _PrincipalState extends State<Principal> {
     );
   }
 
+  //Card con el email del usuario
+  Widget miCorreo() {
+    return Card(
+      child: Text(
+        'Te registraste con el correo: ' + widget.dato,
+        textAlign: TextAlign.center,
+        style: TextStyle(color: Colors.black, fontSize: 15),
+      ),
+      color: Colors.grey[400],
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       //AppBar con el nombre del usuario
       appBar: AppBar(
         title: Text('Rollers UNAM - ' + widget.cabecera,
-            style: TextStyle(color: Colors.blue[600])),
+            style: TextStyle(fontSize: 23, color: Colors.blue[600])),
         backgroundColor: Colors.black,
       ),
 
@@ -123,6 +135,8 @@ class _PrincipalState extends State<Principal> {
             child: botonProductos(context),
           ),
           imagenProductos(),
+          Divider(),
+          Expanded(child: miCorreo())
         ],
       ),
     );

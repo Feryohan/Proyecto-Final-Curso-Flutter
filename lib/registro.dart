@@ -28,7 +28,9 @@ class _RegistroState extends State<Registro> {
     return TextField(
       controller: _valorUsuario,
       decoration: InputDecoration(
-          border: OutlineInputBorder(), labelText: 'Nombre de usuario'),
+        border: OutlineInputBorder(),
+        labelText: 'Nombre de usuario',
+      ),
     );
   }
 
@@ -46,11 +48,12 @@ class _RegistroState extends State<Registro> {
     return Container(
       color: Colors.red,
       child: FlatButton(
-        child: Text('Registrarse', style: TextStyle(color: Colors.white)),
+        child: Text('Registrarse',
+            style: TextStyle(fontSize: 20, color: Colors.white)),
         onPressed: () {
+          //Conexión entre las páginas "Registro" y "Principal"
           Navigator.push(
               context,
-              //Conexión entre las páginas "Registro" y "Principal"
               MaterialPageRoute(
                   builder: (context) => Principal(
                       cabecera: _valorUsuario.text, dato: _valorCorreo.text)));
@@ -64,7 +67,10 @@ class _RegistroState extends State<Registro> {
 
         //AppBar con el nombre de la página
         appBar: AppBar(
-          title: Text('Registro de Usuario Nuevo'),
+          title: Text(
+            'Registro de Usuario Nuevo',
+            style: TextStyle(fontSize: 20),
+          ),
           backgroundColor: Colors.red,
         ),
 
