@@ -13,6 +13,16 @@ class _RegistroState extends State<Registro> {
   TextEditingController _valorUsuario = new TextEditingController();
   TextEditingController _valorCorreo = new TextEditingController();
 
+  //Imagen principal de la página
+  Widget imagenRegistro() {
+    return Container(
+      child: Image(
+        image: AssetImage('images/Registro.jpg'),
+      ),
+      height: 400,
+    );
+  }
+
   //Registro del usuario
   Widget usuario() {
     return TextField(
@@ -34,9 +44,9 @@ class _RegistroState extends State<Registro> {
   //Botón para enviar el registro
   Widget botonRegistro(BuildContext context) {
     return Container(
-      color: Colors.black,
+      color: Colors.red,
       child: FlatButton(
-        child: Text('Registrarse', style: TextStyle(color: Colors.red)),
+        child: Text('Registrarse', style: TextStyle(color: Colors.white)),
         onPressed: () {
           Navigator.push(
               context,
@@ -61,9 +71,12 @@ class _RegistroState extends State<Registro> {
         //Cuerpo de la página
         body: ListView(
           children: <Widget>[
+            imagenRegistro(),
+            Divider(),
             Expanded(child: usuario()),
             Divider(),
             Expanded(child: correo()),
+            Divider(),
             Expanded(child: botonRegistro(context))
           ],
         ));

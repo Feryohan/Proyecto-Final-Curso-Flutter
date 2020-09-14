@@ -32,6 +32,16 @@ class _PrincipalState extends State<Principal> {
     );
   }
 
+  //Imagen de Clases
+  Widget imagenClases() {
+    return Container(
+      child: Image(
+        image: AssetImage('images/Clases.jpg'),
+      ),
+      height: 300,
+    );
+  }
+
   //Botón para acceder a la página "Recorridos"
   Widget botonRecorridos(BuildContext context) {
     return Container(
@@ -49,10 +59,20 @@ class _PrincipalState extends State<Principal> {
     );
   }
 
+  //Imagen de Recorridos
+  Widget imagenRecorridos() {
+    return Container(
+      child: Image(
+        image: AssetImage('images/Recorridos.jpg'),
+      ),
+      height: 300,
+    );
+  }
+
   //Botón para acceder a la página "Productos"
   Widget botonProductos(BuildContext context) {
     return Container(
-      color: Colors.pink,
+      color: Colors.brown,
       child: FlatButton(
         child: Text(
           'Productos',
@@ -66,14 +86,24 @@ class _PrincipalState extends State<Principal> {
     );
   }
 
+  //Imagen de Productos
+  Widget imagenProductos() {
+    return Container(
+      child: Image(
+        image: AssetImage('images/Productos.jpg'),
+      ),
+      height: 300,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       //AppBar con el nombre del usuario
       appBar: AppBar(
         title: Text('Rollers UNAM - ' + widget.cabecera,
-            style: TextStyle(color: Colors.green)),
-        backgroundColor: Colors.amber,
+            style: TextStyle(color: Colors.blue[600])),
+        backgroundColor: Colors.black,
       ),
 
       //Cuerpo de la página
@@ -82,12 +112,17 @@ class _PrincipalState extends State<Principal> {
           Expanded(
             child: botonClases(context),
           ),
+          imagenClases(),
+          Divider(),
           Expanded(
             child: botonRecorridos(context),
           ),
+          imagenRecorridos(),
+          Divider(),
           Expanded(
             child: botonProductos(context),
-          )
+          ),
+          imagenProductos(),
         ],
       ),
     );

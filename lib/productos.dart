@@ -5,8 +5,8 @@ class Productos extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Productos'),
-        backgroundColor: Colors.brown,
+        title: Text('Productos', style: TextStyle(color: Colors.brown)),
+        backgroundColor: Colors.black,
       ),
     );
   }
